@@ -50,7 +50,7 @@ jobs:
     steps:
       - name: Create Brev runner
         id: brev-start
-        uses: omsf-eco-infra/start-brev-gha-runner@main
+        uses: omsf-eco-infra/start-brev-gha-runner@8caae6a56ffe6f455278dea33e20b9b8dc003d4e # v1
         with:
           brev_instance_type: g5.xlarge,g6.xlarge
         env:
@@ -61,7 +61,7 @@ jobs:
     needs: start-brev-runner
     runs-on: ${{ fromJSON(needs.start-brev-runner.outputs.instances) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       - run: nvidia-smi
 ```
 
